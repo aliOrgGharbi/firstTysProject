@@ -1,6 +1,17 @@
 import { Request, Response, NextFunction } from "express";
+import { Types } from "mongoose";
 import validator from "validator";
 
+export const validateAmountId = (req: Request, res: Response, next: NextFunction) => {
+  const id = req.params.cardId as string;
+
+  if (!id || !Types.ObjectId.isValid(id)) {
+    return res.status(400).json({
+      reason: "Invalid ID format. The ID provided is not a valid MongoDB ObjectId."
+    });
+  }
+  next();
+};
 
 export const validateAmountBody = (req: Request, res: Response, next: NextFunction) => {
     if (!req.body || Object.keys(req.body).length === 0) {
