@@ -65,6 +65,6 @@ test("should map amount data correctly", () => {
   const result: AmountResponse = mapToAmountResponse(mockAmount);
 
   // then
-  expect(result.balance).toBe(null);
+  expect(result.balance).toBe(undefined);
   expect(result.lastUpdated).toBe(null);
 });
