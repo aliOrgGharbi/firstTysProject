@@ -9,6 +9,6 @@ export interface UserResponse {
 }
 
 export interface AmountResponse {
-    balance: number;
-    lastUpdated: Date;
+    balance: number | null;
+    lastUpdated: Date | null;
 }
