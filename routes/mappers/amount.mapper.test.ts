@@ -2,7 +2,7 @@ import { Amount } from "../../service/amount.services";
 import { mapToAmountResponse, mapToAmountListResponse } from "./amount.mappers";
 import { AmountResponse } from "./types";
 
-test("should map  amount data correctly", () => {
+test("should map amount data correctly", () => {
   // given
   const mockAmount: Amount = {
     cardId: "card_xyz",
